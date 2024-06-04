@@ -7,7 +7,7 @@ services:
     volumes:
       - ./ffmpeg_convert.sh:/app/ffmpeg_convert.sh # Mount volume for shell script
       - ./hls:/var/www/html # Mount volume for HLS output directory
-    command: ["bash", "-c", "/app/ffmpeg_convert.sh"]  # Execute shell script using default shell
+    command: bash -c "/app/ffmpeg_convert.sh" # Execute shell script using default shell
 
   nginx:
     image: nginx:latest
