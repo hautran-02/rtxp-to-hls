@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Array of RTMP sources
 rtmp_sources=(
     "rtmp://103.130.211.150:10050/stream"
     "rtmp://103.130.211.150:10050/stream"
