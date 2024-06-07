@@ -2,10 +2,10 @@
 FROM jrottenberg/ffmpeg:latest
 
 # Copy shell script for converting RTMP to HLS
-COPY convert.sh /convert.sh
+COPY convert.sh /usr/local/bin/convert.sh
 
 # Allow execution of shell script
-RUN chmod +x /convert.sh
+RUN chmod +x /usr/local/bin/convert.sh
 
 # Install Nginx
 RUN apt-get update && apt-get install -y nginx
@@ -21,4 +21,4 @@ EXPOSE 80
 EXPOSE 443
 
 # Start FFmpeg and Nginx
-CMD ["sh", "./convert.sh"]
+CMD ["/usr/local/bin/convert.sh"]
