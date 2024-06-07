@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Ensure the script exits if any command fails
-set -e
-
 rtmp_sources=(
     "rtmp://103.130.211.150:10050/stream"
     "rtmp://103.130.211.150:10050/stream"
