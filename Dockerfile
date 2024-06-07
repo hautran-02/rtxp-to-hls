@@ -1,24 +1,17 @@
-# Use a base image with FFmpeg pre-installed
-FROM jrottenberg/ffmpeg:latest
+# Use an appropriate base image
+FROM alpine:latest
 
-# Copy shell script for converting RTMP to HLS
-COPY convert.sh /convert.sh
+# Install FFmpeg
+RUN apk add --no-cache ffmpeg
 
-# Allow execution of shell script
-RUN chmod +x /convert.sh
+# Set up a directory for storing HLS output
+WORKDIR /app
 
-# Install Nginx
-RUN apt-get update && apt-get install -y nginx
+# Copy the script to convert RTMP to HLS
+COPY convert_rtmp_to_hls.sh .
 
-# Copy Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
+# Make the script executable
+RUN chmod +x convert_rtmp_to_hls.sh
 
-# Create directory for HLS files
-RUN mkdir -p /usr/share/nginx/html/hls
-
-# Expose ports for Nginx
-EXPOSE 80
-EXPOSE 443
-
-# Start FFmpeg and Nginx
-CMD ["/convert.sh"]
+# Command to run the script
+CMD ["./convert_rtmp_to_hls.sh"]
