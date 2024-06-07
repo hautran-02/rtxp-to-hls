@@ -2,8 +2,8 @@
 
 # Example array of RTMP streams
 rtmp_streams=(
-    "rtmp://source_url1/input_stream1"
-    "rtmp://source_url2/input_stream2"
+    "rtmp://103.130.211.150:10050/stream"
+    "rtmp://103.130.211.150:10050/stream"
     # Add more RTMP streams as needed
 )
 
