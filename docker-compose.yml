@@ -8,6 +8,6 @@ services:
   nginx-hls-server:
     image: nginx:latest
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - ./hls:/usr/share/nginx/html/hls
