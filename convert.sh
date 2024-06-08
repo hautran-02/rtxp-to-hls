@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 rtmp_sources=(
     "rtmp://103.130.211.150:10050/stream"
