@@ -21,4 +21,4 @@ EXPOSE 80
 EXPOSE 443
 
 # Start FFmpeg and Nginx
-CMD /usr/local/bin/convert.sh
+CMD sh /usr/local/bin/convert.sh
